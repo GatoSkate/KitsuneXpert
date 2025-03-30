@@ -1,0 +1,15 @@
+:root {
+    /* Tema Claro */
+    --bg-primary: #ffffff;
+    --text-primary: #000000;
+    --accent: #00ff9d;
+    --btn-gradient: linear-gradient(90deg, #00ff9d, #00b37b);
+}
+
+[data-theme="dark"] {
+    /* Tema Oscuro */
+    --bg-primary: #121212;
+    --text-primary: #ffffff;
+    --accent: #ff00aa;
+    --btn-gradient: linear-gradient(90deg, #ff00aa, #cc0088);
+}

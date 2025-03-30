@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "PC Gamer Kitsune Pro",
+        "price": 1499.99,
+        "image": "assets/pc-gamer.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Laptop Fox Ryzen 9",
+        "price": 1299.99,
+        "image": "assets/laptop.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Teclado Mecánico Neon",
+        "price": 89.99,
+        "image": "assets/keyboard.jpg"
+    }
+]

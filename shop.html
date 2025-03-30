@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - KitsuneXpert</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>🦊 KitsuneXpert</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="shop.html">Tienda</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a></li>
+                <li><button id="theme-toggle">🌓</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products">
+            <h2>Catálogo de Productos</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Carga los productos al abrir la página
+        document.addEventListener('DOMContentLoaded', async () => {
+            const products = await loadProducts();
+            const grid = document.getElementById('product-grid');
+
+            products.forEach(product => {
+                grid.innerHTML += `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>$${product.price.toFixed(2)}</p>
+                        <button onclick="addToCart(${product.id})">Añadir 🛒</button>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
