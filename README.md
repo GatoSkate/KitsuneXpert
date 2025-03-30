@@ -1,3 +1,4 @@
+
 # 🦊 KitsuneXpert - Tienda Tecnológica
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/tu-usuario/KitsuneXpert?style=for-the-badge)
@@ -34,3 +35,46 @@
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/tu-usuario/KitsuneXpert.git
+   ```
+2. Abre el proyecto en VSCode:
+   ```bash
+   cd KitsuneXpert && code .
+   ```
+3. Ejecútalo con **Live Server** (extensión de VSCode).
+
+## 🌐 Demo en Vivo
+
+Visita la página desplegada con GitHub Pages:  
+🔗 [https://tu-usuario.github.io/KitsuneXpert/](https://tu-usuario.github.io/KitsuneXpert/)
+
+## 📌 Estructura del Proyecto
+
+```
+KitsuneXpert/
+├── index.html          # Página principal
+├── shop.html           # Catálogo de productos
+├── cart.html           # Carrito de compras
+├── css/                # Estilos
+│   ├── styles.css
+│   └── themes.css
+├── js/                 # Scripts
+│   ├── main.js
+│   ├── cart.js
+│   └── theme-switcher.js
+├── data/               # Base de datos
+│   └── products.json
+└── assets/             # Imágenes/íconos
+    ├── images/
+    └── icons/
+```
+
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+🦊 **KitsuneXpert** © 2024 - [@tu-usuario](https://github.com/tu-usuario)
+```
+
