@@ -1,27 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - KitsuneXpert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/themes.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <header>
-        <h1>KitsuneXpert 🦊</h1>
+    <!-- Header idéntico al index.html -->
+    <header class="header">
+        <div class="logo">
+            <h1>🦊 KitsuneXpert</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="shop.html">Productos</a></li>
-                <li><a href="cart.html">Carrito (<span id="cart-count">0</span>)</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="shop.html"><i class="fas fa-laptop"></i> Tienda</a></li>
+                <li><a href="cart.html" class="cart-btn active"><i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-btn">
+                        <span class="theme-icon sun"><i class="fas fa-sun"></i></span>
+                        <span class="theme-icon moon"><i class="fas fa-moon"></i></span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Tu Carrito</h2>
-        <div id="cart-items"></div>
-        <p>Total: $<span id="cart-total">0.00</span></p>
+
+    <!-- Contenido del Carrito -->
+    <main class="cart-container">
+        <h2 class="cart-title">🦊 Tu <span class="neon-text">Carrito</span></h2>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Los productos se cargarán aquí con JavaScript -->
+        </div>
+
+       <!-- Reemplaza la sección de resumen con esto -->
+<div class="cart-summary">
+    <div class="summary-card">
+        <h3>Resumen de Compra</h3>
+        <form id="checkout-form">
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Envío:</span>
+                <span id="shipping">Gratis</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button type="submit" class="checkout-btn btn">
+                <i class="fas fa-lock"></i> Pagar con Stripe
+            </button>
+        </form>
+    </div>
+</div>
     </main>
+
+    <!-- Footer idéntico al index.html -->
+    <footer>
+        <p>&copy; 2024 KitsuneXpert - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme-switcher.js"></script>
     <script src="js/cart.js"></script>
 </body>
 </html>
