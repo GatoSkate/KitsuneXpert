@@ -45,7 +45,7 @@
 ## 🌐 Demo en Vivo
 
 Visita la página desplegada con GitHub Pages:  
-🔗 [https://tu-usuario.github.io/KitsuneXpert/](https://tu-usuario.github.io/KitsuneXpert/)
+🔗 [https://GatoSkate.github.io/KitsuneXpert/](https://GatoSkate.github.io/KitsuneXpert/)
 
 ## 📌 Estructura del Proyecto
 
@@ -75,6 +75,6 @@ Este proyecto está bajo la licencia **MIT**. Consulta el archivo [LICENSE](LICE
 
 ---
 
-🦊 **KitsuneXpert** © 2024 - [@tu-usuario](https://github.com/tu-usuario)
+🦊 **KitsuneXpert** © 2024 - [@tu-usuario](https://https://github.com/GatoSkate)
 ```
 
