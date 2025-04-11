@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - KitsuneXpert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <script src="js/theme-switcher.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>🦊 KitsuneXpert</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="shop.html" class="active"><i class="fas fa-laptop"></i> Tienda</a></li>
+                <li><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-btn">
+                        <span class="theme-icon sun"><i class="fas fa-sun"></i></span>
+                        <span class="theme-icon moon"><i class="fas fa-moon"></i></span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="shop-main">
+        <h2 class="shop-title">Nuestros Productos</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Los productos se cargarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KitsuneXpert - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

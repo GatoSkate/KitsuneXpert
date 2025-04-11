@@ -1,0 +1,15 @@
+:root {
+    /* Tema Claro */
+    --bg-primary: #ffffff;
+    --text-primary: #000000;
+    --accent: #00ff9d;
+    --hero-bg: url('/assets/images/FondoMain.jpg'); /* Imagen para tema claro */
+}
+
+[data-theme="dark"] {
+    /* Tema Oscuro */
+    --bg-primary: #121212;
+    --text-primary: #ffffff;
+    --accent: #ff00aa;
+    --hero-bg: url('/assets/images/FondoMainDark.jpg'); /* Imagen para tema oscuro */
+}
