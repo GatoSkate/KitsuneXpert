@@ -1,0 +1,26 @@
+{
+  "name": "kitsunexpert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GatoSkate/KitsuneXpert.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GatoSkate/KitsuneXpert/issues"
+  },
+  "homepage": "https://github.com/GatoSkate/KitsuneXpert#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "firebase": "^11.6.0"
+  }
+}
