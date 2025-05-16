@@ -14,8 +14,5 @@ class UserAdmin(admin.ModelAdmin):
     list_filter = ('is_staff', 'is_superuser')
     search_fields = ('username', 'email')
     
-admin.site.unregister(User)  # Desregistra el default
-admin.site.register(User, UserAdmin)
-admin.site.register(Producto)
-admin.site.register(Carrito)
+
 admin.site.register(Producto, ProductoAdmin)  # Solo esta línea debe estar activa
