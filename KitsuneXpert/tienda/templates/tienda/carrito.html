@@ -2,27 +2,59 @@
 {% load humanize %}
 
 {% block content %}
-<section class="carrito-container">
-    <h1>Tu Carrito</h1>
+<div class="carrito-container">
+    <h1 class="titulo-carrito">🛒 Tu Carrito</h1>
+    
     {% if items %}
-    <div class="items-carrito">
-        {% for item in items %}
-        <div class="item-carrito">
-            <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}">
-            <div class="info-item">
-                <h3>{{ item.producto.nombre }}</h3>
-                <p>${{ item.producto.precio|intcomma }} CLP x {{ item.cantidad }}</p>
-                <p>Subtotal: ${{ item.subtotal|intcomma }} CLP</p>
-            </div>
-        </div>
-        {% endfor %}
+    <div class="contenedor-tabla">
+        <table class="tabla-carrito">
+            <thead>
+                <tr>
+                    <th class="columna-producto">Producto</th>
+                    <th class="columna-precio">Precio</th>
+                    <th class="columna-cantidad">Cantidad</th>
+                    <th class="columna-subtotal">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td class="celda-producto">
+                        <div class="info-producto">
+                            <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}" class="imagen-producto">
+                            <span class="nombre-producto">{{ item.producto.nombre }}</span>
+                        </div>
+                    </td>
+                    <td class="celda-precio">${{ item.producto.precio|intcomma }} CLP</td>
+                    <td class="celda-cantidad">
+                        <div class="contador-cantidad">
+                            <a href="{% url 'reducir_cantidad' item.id %}" class="btn-cantidad">−</a>
+                            <span class="numero-cantidad">{{ item.cantidad }}</span>
+                            <a href="{% url 'aumentar_cantidad' item.id %}" class="btn-cantidad">+</a>
+                        </div>
+                    </td>
+                    <td class="celda-subtotal">${{ item.subtotal|intcomma }} CLP</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-    <div class="total-carrito">
-        <h3>Total: ${{ total|intcomma }} CLP</h3>
-        <button class="btn-comprar">Finalizar Compra</button>
+
+    <div class="resumen-carrito">
+        <div class="total-container">
+            <span class="texto-total">Total:</span>
+            <span class="monto-total">${{ total|intcomma }} CLP</span>
+        </div>
+        <a href="{% url 'finalizar_compra' %}" class="btn-finalizar">
+            Finalizar Compra <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
     {% else %}
-    <p>Tu carrito está vacío.</p>
+    <div class="carrito-vacio">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Tu carrito está vacío</p>
+        <a href="{% url 'productos' %}" class="btn-seguir-comprando">Explorar Productos</a>
+    </div>
     {% endif %}
-</section>
+</div>
 {% endblock %}

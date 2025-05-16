@@ -1,0 +1,60 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2><i class="fas fa-user-plus"></i> Registro en KitsuneXpert</h2>
+        
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            
+            {% if form.errors %}
+            <div class="alert-error">
+                <strong>Errores:</strong>
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <div class="form-group">
+                <label for="id_username"><i class="fas fa-user"></i> Nombre de Usuario</label>
+                {{ form.username }}
+                <small class="form-text">Requerido. 150 caracteres o menos.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                {{ form.email }}
+                <small class="form-text">Importante para recibir confirmaciones.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_password1"><i class="fas fa-lock"></i> Contraseña</label>
+                {{ form.password1 }}
+                <small class="form-text">
+                    Mínimo 8 caracteres, no solo números.
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_password2"><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                {{ form.password2 }}
+            </div>
+            
+            <button type="submit" class="btn-auth">
+                <i class="fas fa-user-check"></i> Registrarse
+            </button>
+        </form>
+        
+        <div class="auth-links">
+            <a href="{% url 'login' %}">¿Ya tienes cuenta? Inicia Sesión</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

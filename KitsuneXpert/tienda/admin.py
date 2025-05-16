@@ -9,4 +9,13 @@ class ProductoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'precio', 'stock')
     search_fields = ('nombre',)
 
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('username', 'email', 'date_joined', 'is_staff')
+    list_filter = ('is_staff', 'is_superuser')
+    search_fields = ('username', 'email')
+    
+admin.site.unregister(User)  # Desregistra el default
+admin.site.register(User, UserAdmin)
+admin.site.register(Producto)
+admin.site.register(Carrito)
 admin.site.register(Producto, ProductoAdmin)  # Solo esta línea debe estar activa

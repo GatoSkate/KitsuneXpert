@@ -1,0 +1,10 @@
+{% extends 'tienda/base.html' %}
+
+{% block content %}
+<div class="compra-exitosa">
+    <h1>¡Compra realizada con éxito! 🎉</h1>
+    <p>Tu pedido ha sido procesado correctamente.</p>
+    <p>Recibirás un correo con los detalles de tu compra.</p>
+    <a href="{% url 'productos' %}" class="btn">Seguir comprando</a>
+</div>
+{% endblock %}

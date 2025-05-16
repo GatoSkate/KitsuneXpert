@@ -126,6 +126,16 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/login/'  # Redirige si no está logueado
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_REDIRECT_URL = 'inicio'  # Página tras login exitoso
+LOGOUT_REDIRECT_URL = 'inicio'  # Página tras logout
+LOGIN_URL = 'login'  # Página de login
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # En desarrollo
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # En producción
+EMAIL_HOST = 'smtp.tuservidor.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tu@email.com'
+EMAIL_HOST_PASSWORD = 'tupassword'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
