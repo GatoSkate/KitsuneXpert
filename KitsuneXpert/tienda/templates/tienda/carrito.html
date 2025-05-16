@@ -1,0 +1,28 @@
+{% extends 'tienda/base.html' %}
+{% load humanize %}
+
+{% block content %}
+<section class="carrito-container">
+    <h1>Tu Carrito</h1>
+    {% if items %}
+    <div class="items-carrito">
+        {% for item in items %}
+        <div class="item-carrito">
+            <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}">
+            <div class="info-item">
+                <h3>{{ item.producto.nombre }}</h3>
+                <p>${{ item.producto.precio|intcomma }} CLP x {{ item.cantidad }}</p>
+                <p>Subtotal: ${{ item.subtotal|intcomma }} CLP</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="total-carrito">
+        <h3>Total: ${{ total|intcomma }} CLP</h3>
+        <button class="btn-comprar">Finalizar Compra</button>
+    </div>
+    {% else %}
+    <p>Tu carrito está vacío.</p>
+    {% endif %}
+</section>
+{% endblock %}

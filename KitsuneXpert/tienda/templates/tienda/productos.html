@@ -1,0 +1,27 @@
+{% extends 'tienda/base.html' %}
+{% load static humanize %}
+{% load humanize %}
+
+{% block content %}
+<section class="productos-container">
+    <h1>Nuestros Productos</h1>
+    <div class="productos-grid">
+        {% for producto in productos %}
+        <div class="producto-card">
+            <!-- Imagen del producto -->
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="producto-imagen">
+            
+            <!-- Información del producto -->
+            <div class="producto-info">
+                <h3>{{ producto.nombre }}</h3>
+                <p class="producto-descripcion">{{ producto.descripcion|truncatechars:100 }}</p>
+                <p class="producto-precio">${{ producto.precio|intcomma }} CLP</p>
+                <!-- Versión mejorada con manejo de errores -->
+<a href="{% url 'agregar_carrito' producto.id %}" class="btn-add">Añadir al carrito</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

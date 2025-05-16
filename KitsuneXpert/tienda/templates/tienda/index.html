@@ -1,0 +1,71 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Los precios más baratos en <span>KitsuneXpert</span></h1>
+            <a href="{% url 'productos' %}" class="btn">Explorar Productos</a>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="featured-products">
+        <h2>Productos Destacados</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="{% static 'tienda/img/producto1.jpg' %}" alt="RTX 4090">
+                <h3>RTX 4090</h3>
+                <p class="price">$1,499.99</p>
+                <button class="btn-add">Añadir al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'tienda/img/producto2.jpg' %}" alt="Teclado Gaming">
+                <h3>Teclado Mecánico</h3>
+                <p class="price">$99.99</p>
+                <button class="btn-add">Añadir al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'tienda/img/producto3.jpg' %}" alt="Monitor 144Hz">
+                <h3>Monitor 144Hz</h3>
+                <p class="price">$299.99</p>
+                <button class="btn-add">Añadir al carrito</button>
+            </div>
+        </div>
+        <a href="{% url 'productos' %}" class="btn-view-all">Ver todos los productos</a>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre Nosotros</h2>
+                <p>En KitsuneXpert nos dedicamos a ofrecer los mejores componentes tecnológicos al mejor precio. Fundada en 2024, nuestra misión es llevar la tecnología gaming a todo el mundo.</p>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'tienda/img/about-us.jpg' %}" alt="Equipo KitsuneXpert">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact">
+        <div class="contact-form">
+            <h2>Contáctanos</h2>
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Nuestros Datos</h2>
+            <p><i class="fab fa-whatsapp"></i> +123 456 7890</p>
+            <p><i class="fab fa-instagram"></i> @KitsuneXpert</p>
+            <p><i class="fas fa-phone"></i> +123 456 7890</p>
+        </div>
+    </section>
+{% endblock %}
