@@ -75,7 +75,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: url('../img/bg-tech.jpg') no-repeat center/cover;
+    background: url('../../../media/Fondos/fondo.jpg') no-repeat center/cover;
     height: 70vh;
     display: flex;
     align-items: center;
