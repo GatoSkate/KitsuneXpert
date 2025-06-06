@@ -19,19 +19,19 @@
                 <img src="../../../media/productos/Notebook_Vivobook_S16.png" alt="Notebook Vivobook S16 AMD Ryzen 9">
                 <h3>Notebook Vivobook S16 AMD Ryzen 9 (ASUS)</h3>
                 <p class="price">$550.000</p>
-                <button class="btn-add">Ver Producto</button>
+                <a href="{% url 'productos' %}" class="btn-view-all">Ver Producto</a>
             </div>
             <div class="product-card">
                 <img src="../../../media/productos/Notebook_Lenovo.png" alt="Teclado Gaming">
                 <h3>Notebook Gamer LOQ Gen 9 AMD Ryzen 7 (LENOVO)</h3>
                 <p class="price">$600.000</p>
-                <button class="btn-add">Ver Producto</button>
+                <a href="{% url 'productos' %}" class="btn-view-all">Ver Producto</a>
             </div>
             <div class="product-card">
                 <img src="../../../media/productos/Notebook_Dell.png" alt="Monitor 144Hz">
                 <h3>Notebook Inspiron 3535 AMD Ryzen 5 (DELL)</h3>
                 <p class="price">$349.990</p>
-                <button class="btn-add">Ver Producto</button>
+                <a href="{% url 'productos' %}" class="btn-view-all">Ver Producto</a>
             </div>
         </div>
         <a href="{% url 'productos' %}" class="btn-view-all">Ver todos los productos</a>
@@ -60,7 +60,7 @@
         </div>
             </div>
             <div class="about-image">
-                <img src="{% static 'tienda/img/about-us.jpg' %}" alt="Equipo KitsuneXpert">
+                <img src="../../../media/logo/KitsuneXpert2.jpg" alt="Equipo KitsuneXpert">
             </div>
         </div>
     </section>
@@ -78,9 +78,9 @@
         </div>
         <div class="contact-info">
             <h2>Nuestros Datos</h2>
-            <p><i class="fab fa-whatsapp"></i> +123 456 7890</p>
-            <p><i class="fab fa-instagram"></i> @KitsuneXpert</p>
-            <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            <p><i class="fab fa-whatsapp"></i> +56 9 2896 0093</p>
+            <p><i class="fab fa-instagram"></i> @KitsuneXpertOficial</p>
+            <p><i class="fas fa-phone"></i> +56 22 10 44 202 102</p>
         </div>
     </section>
 {% endblock %}
