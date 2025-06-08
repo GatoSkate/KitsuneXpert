@@ -896,3 +896,265 @@ footer {
         padding: 1.5rem;
     }
 }
+/* Estilos para las tarjetas de sucursales */
+.sucursales-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title, .map-title {
+    text-align: center;
+    margin: 2rem 0;
+    color: #2c3e50;
+}
+
+.sucursales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.sucursal-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sucursal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.sucursal-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.sucursal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sucursal-card:hover .sucursal-image img {
+    transform: scale(1.05);
+}
+
+.sucursal-info {
+    padding: 1.5rem;
+}
+
+.sucursal-info h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.sucursal-info p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.sucursal-info i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
+
+.toggle-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-btn:hover {
+    background: #2980b9;
+}
+
+.toggle-btn i {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sucursales-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos generales */
+.sucursales-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.sucursales-main-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.sucursales-main-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+/* Lista de sucursales */
+.sucursales-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Tarjeta de sucursal */
+.sucursal-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sucursal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.sucursal-header {
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sucursal-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.sucursal-status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.sucursal-status.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.sucursal-body {
+    padding: 1rem 1.5rem;
+}
+
+.sucursal-info-item {
+    display: flex;
+    align-items: center;
+    margin: 0.8rem 0;
+    color: #555;
+}
+
+.sucursal-info-item i {
+    width: 25px;
+    color: #3498db;
+    font-size: 1.1rem;
+}
+
+.sucursal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.ver-detalles-btn {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.ver-detalles-btn:hover {
+    color: #2980b9;
+}
+
+.ver-detalles-btn i {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Mapa */
+.map-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    height: 400px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.map-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #7f8c8d;
+}
+
+.map-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sucursal-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .sucursal-status {
+        margin-top: 0.5rem;
+    }
+}

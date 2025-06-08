@@ -8,7 +8,7 @@ from django.contrib.auth import login
 from .forms import CustomUserCreationForm 
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
-
+from .models import Sucursal
 from django.contrib.auth import login as auth_login  # Renombramos para evitar conflicto
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
@@ -37,7 +37,9 @@ def productos(request):
     return render(request, 'tienda/productos.html', {'productos': productos})
 
 def sucursales(request):
-    return render(request, 'tienda/sucursales.html')
+    return render(request, 'tienda/sucursales.html', {  # Nota el 'tienda/'
+        'sucursales': Sucursal.objects.all().order_by('comuna')
+    })
 
 def finalizar_compra(request):
     if not request.user.is_authenticated:

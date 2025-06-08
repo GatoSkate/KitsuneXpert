@@ -22,3 +22,24 @@ class Carrito(models.Model):
 
     def __str__(self):
         return f"{self.cantidad}x {self.producto.nombre} ({self.usuario.username})"
+
+
+class Sucursal(models.Model):
+    nombre = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=200)
+    comuna = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=20)
+    email = models.EmailField(blank=True, null=True)  # Campo modificado para ser opcional
+    horario = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to='sucursales/', blank=True, null=True)  # Opcional
+    latitud = models.FloatField()
+    longitud = models.FloatField()
+    imagen = models.ImageField(
+        upload_to='sucursales/',
+        blank=True,  # Permite que el campo esté vacío en formularios
+        null=True,   # Permite NULL en la base de datos
+        help_text="Imagen de la sucursal (opcional)"
+    )
+    
+    def __str__(self):
+        return f"{self.nombre} - {self.comuna}"

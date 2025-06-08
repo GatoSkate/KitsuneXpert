@@ -1,0 +1,62 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="sucursales-container">
+    <h1 class="main-title">Nuestras Sucursales</h1>
+    
+    <div class="sucursales-grid">
+        {% for sucursal in sucursales %}
+        <div class="sucursal-card">
+            
+            <div class="sucursal-info">
+                <h3>{{ sucursal.nombre }}</h3>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> {{ sucursal.direccion }}, {{ sucursal.comuna }}</p>
+                
+                <div class="sucursal-details hidden" id="details-{{ sucursal.id }}">
+                    <p><i class="fas fa-phone"></i> {{ sucursal.telefono }}</p>
+                    <p><i class="fas fa-envelope"></i> {{ sucursal.email }}</p>
+                    <p><i class="fas fa-clock"></i> Horario: {{ sucursal.horario }}</p>
+                </div>
+                
+                <button class="toggle-btn" onclick="toggleDetails({{ sucursal.id }})">
+                    <span class="show-text">Ver detalles</span>
+                    <span class="hide-text hidden">Ocultar</span>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="map-title">Ubicación de Nuestras Sucursales</h2>
+    <div id="map"></div>
+</div>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+<script>
+    // Función para mostrar/ocultar detalles
+    function toggleDetails(id) {
+        const details = document.getElementById(`details-${id}`);
+        const showText = document.querySelector(`#details-${id}`).previousElementSibling.querySelector('.show-text');
+        const hideText = document.querySelector(`#details-${id}`).previousElementSibling.querySelector('.hide-text');
+        
+        details.classList.toggle('hidden');
+        showText.classList.toggle('hidden');
+        hideText.classList.toggle('hidden');
+    }
+
+    // Mapa
+    function initMap() {
+        const center = { lat: -33.4372, lng: -70.6506 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 11,
+            center: center
+        });
+
+       
+        
+    }
+</script>
+
+{% endblock %}
